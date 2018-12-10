@@ -1,0 +1,13 @@
+table {
+  /* width: 100vw;
+  display: flex; */
+}
+
+.control {
+  display: flex;
+  justify-content: space-between
+}
+
+input.form-control  {
+  width: 200px;
+}

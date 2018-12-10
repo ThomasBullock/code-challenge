@@ -1,44 +1,30 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Overview
 
-## Available Scripts
+We have a list (Array) of 1001 Javascript maps (Objects), that have been pulled down from the internet somewhere.  This data can be found in `data.txt`.  We'd like to give an interface to our users to do the following:
 
-In the project directory, you can run:
+1. Display a list of the data to the end user, in a table-like format
+2. Have the user enter a value into a search box, and have the data filter in the list if it partially matches on any of the properties
+3. Give the user the ability to sort the data *by one column only* (ie there is no requirement to chain the sorts).  These columns should be `title`, `id`, `year`
 
-### `npm start`
+Since there is lots of data in the list, the user is going to need to be able to paginate through the items.  The user should be able to select the page size from a dropdown - the options being 10, 25 and 50; and with the default value being 10.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Tools  
+React  
+Redux
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+**Bonus Points**  
+Reselect  
+Immutable
 
-### `npm test`
+The project uses both of these packages, so it is highly encouraged that if you are familiar with them to try it.  If you are creating custom selectors, here is a helpful gist that is pulled straight from the project:
+https://gist.github.com/mcspud/9d75f4130799cce535e413826a2de9bc
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+There is 0 requirement for styling in this challenge.  If you'd like to pretty it up with bootstrap or something then by all means, but you will not be judged on this at all.
 
-### `npm run build`
+A wireframe has been provided for reference if you need it, but you are in no way required to follow that layout.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Additional Stuff
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+ - Depending on how you do this, there might be some pauses/freezes as you do the sorting.  This isn't a test of optimisation, its purely to see how you work with the toolsets.  If you want to go super fancy and dispatch the sorting out to `WebWorkers` feel free, but its not a requirement.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+ - If you're across Python and want to mess with the data (or regenerate it), you can pipe the output from `stdout` right to a text file in any shell: `python ./data.py > data2.txt`.  You'll need `pipenv` to build the environment.
